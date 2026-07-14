@@ -1,247 +1,517 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hilmi Fawwaz Putra - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            500: '#334e68',
-                            700: '#243b53',
-                            800: '#102a43',
-                            900: '#0a192f',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilmi Fawwaz Putra - Marine Scientist & Geospatial Analyst</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deep: { 950:'#050e1a', 900:'#0a1930', 800:'#0f2340', 700:'#16324f', 600:'#234764' },
+          teal: { 300:'#7fe3d4', 400:'#4fd0bd', 500:'#1fa593', 600:'#12776a' },
+          sand: { 50:'#f6f5f1', 100:'#eeece3' }
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          sans: ['"Inter"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
         }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#f6f5f1; }
+  .contour-bg {
+    background-image:
+      repeating-radial-gradient(circle at 15% 25%, rgba(127,227,212,0.07) 0px, rgba(127,227,212,0.07) 1px, transparent 1px, transparent 34px),
+      repeating-radial-gradient(circle at 85% 70%, rgba(127,227,212,0.05) 0px, rgba(127,227,212,0.05) 1px, transparent 1px, transparent 46px);
+  }
+  .eyebrow { font-family:'IBM Plex Mono',monospace; letter-spacing:.14em; }
+  .fig-slot {
+    border: 1.5px dashed #94a3b8;
+    background: repeating-linear-gradient(135deg, rgba(148,163,184,0.08) 0 10px, transparent 10px 20px);
+  }
+  .timeline-line { background: linear-gradient(to bottom, transparent, #1fa593 6%, #1fa593 94%, transparent); }
+  ::selection { background:#7fe3d4; color:#0a1930; }
+  .reveal { opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity:1; transform: translateY(0); }
+</style>
 </head>
-<body class="font-sans antialiased bg-navy-50 text-gray-800">
+<body class="font-sans antialiased text-deep-900">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm fixed w-full z-50 top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-navy-900 tracking-tighter">HILMI<span class="text-navy-500">.</span></a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#about" class="hover:text-navy-700 text-gray-600 px-3 py-2 rounded-md font-medium transition-colors">About</a>
-                        <a href="#experience" class="hover:text-navy-700 text-gray-600 px-3 py-2 rounded-md font-medium transition-colors">Experience</a>
-                        <a href="#skills" class="hover:text-navy-700 text-gray-600 px-3 py-2 rounded-md font-medium transition-colors">Skills</a>
-                        <a href="#contact" class="hover:text-navy-700 text-gray-600 px-3 py-2 rounded-md font-medium transition-colors">Contact</a>
-                    </div>
-                </div>
-            </div>
+<!-- Navbar -->
+<nav class="bg-sand-50/90 backdrop-blur border-b border-deep-900/10 fixed w-full z-50 top-0">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <a href="#hero" class="font-display text-xl font-semibold tracking-tight">Hilmi<span class="text-teal-600">.</span></a>
+      <div class="hidden md:flex items-center gap-8 eyebrow text-[13px] text-deep-700">
+        <a href="#about" class="hover:text-teal-600 transition-colors">ABOUT</a>
+        <a href="#experience" class="hover:text-teal-600 transition-colors">EXPERIENCE</a>
+        <a href="#education" class="hover:text-teal-600 transition-colors">EDUCATION</a>
+        <a href="#publications" class="hover:text-teal-600 transition-colors">PUBLICATIONS</a>
+        <a href="#skills" class="hover:text-teal-600 transition-colors">SKILLS</a>
+        <a href="#contact" class="hover:text-teal-600 transition-colors">CONTACT</a>
+      </div>
+      <a href="#" class="hidden md:inline-flex items-center gap-2 text-[13px] eyebrow border border-deep-900 px-4 py-2 rounded-full hover:bg-deep-900 hover:text-sand-50 transition-colors">
+        <i class="fa-solid fa-arrow-down text-xs"></i> CV
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="relative bg-deep-900 text-sand-50 pt-36 pb-24 px-5 contour-bg overflow-hidden">
+  <div class="max-w-6xl mx-auto relative">
+    <div class="grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-8">
+        <p class="eyebrow text-teal-300 text-xs mb-5">06°55'S 107°46'E - JATINANGOR, WEST JAVA</p>
+        <h1 class="font-display font-semibold text-5xl md:text-7xl leading-[1.02] mb-6">Hilmi Fawwaz<br>Putra</h1>
+        <p class="text-lg md:text-xl text-deep-100/80 font-light max-w-xl mb-8 border-l-2 border-teal-500 pl-5">
+          Marine Science graduate specializing in hydrographic survey, coastal morphology, and geospatial modeling of coastal dynamics.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#experience" class="bg-teal-500 text-deep-950 font-semibold px-6 py-3 rounded-lg hover:bg-teal-400 transition-colors text-sm">View Fieldwork &amp; Research</a>
+          <a href="#contact" class="border border-sand-50/30 px-6 py-3 rounded-lg hover:bg-sand-50/10 transition-colors text-sm">Get in Touch</a>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="bg-navy-900 text-white pt-32 pb-20 px-4 md:px-0 flex items-center min-h-[85vh]">
-        <div class="max-w-7xl mx-auto w-full text-center md:text-left md:flex md:items-center md:justify-between">
-            <div class="md:w-2/3">
-                <p class="text-navy-100 text-lg mb-2 tracking-wide">Hello, I'm</p>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">Hilmi Fawwaz Putra</h1>
-                <h2 class="text-xl md:text-2xl lg:text-3xl text-navy-100 font-light mb-6">Marine Scientist & Geospatial Analyst</h2>
-                <p class="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
-                    Specializing in coastal dynamics, hydro-oceanography, and numerical modeling to solve complex marine spatial challenges.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#experience" class="bg-white text-navy-900 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition-colors text-center">Explore My Work</a>
-                    <a href="#contact" class="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-navy-900 transition-colors text-center">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hidden md:flex md:w-1/3 justify-center mt-10 md:mt-0">
-                <div class="w-64 h-64 bg-navy-800 rounded-full flex items-center justify-center border-4 border-navy-500 shadow-2xl">
-                    <img src="https://i.ibb.co.com/9HyZQfKK/Formal.jpg" alt="Foto Formal Hilmi Fawwaz Putra" class="w-full h-full object-cover">
-                </div>
-            </div>
+      </div>
+      <div class="md:col-span-4 flex md:justify-end">
+        <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-teal-500/40 shadow-2xl rotate-2">
+          <img src="https://i.ibb.co.com/9HyZQfKK/Formal.jpg" alt="Hilmi Fawwaz Putra" class="w-full h-full object-cover">
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- About Me -->
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-navy-900 mb-4">About Me</h2>
-            <div class="w-16 h-1 bg-navy-500 mx-auto mb-8 rounded"></div>
-            <p class="text-lg text-gray-600 leading-relaxed text-justify md:text-center">
-                I am a Marine Science professional with hands-on expertise in hydrographic surveys, coastal fieldwork, and oceanographic data collection. I excel in utilizing advanced GIS applications and operating precision marine survey instruments. My professional drive is rooted in understanding coastal processes and developing robust marine spatial analysis models to support sustainable multidisciplinary research and environmental conservation.
-            </p>
+    <!-- Stat strip -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-sand-50/10 border border-sand-50/10 rounded-xl overflow-hidden">
+      <div class="bg-deep-900 p-6">
+        <p class="font-display text-3xl font-semibold text-teal-300">3.84</p>
+        <p class="eyebrow text-[11px] text-deep-100/60 mt-1">GPA / 4.00</p>
+      </div>
+      <div class="bg-deep-900 p-6">
+        <p class="font-display text-3xl font-semibold text-teal-300">4+</p>
+        <p class="eyebrow text-[11px] text-deep-100/60 mt-1">FIELD RESEARCH PROJECTS</p>
+      </div>
+      <div class="bg-deep-900 p-6">
+        <p class="font-display text-3xl font-semibold text-teal-300">4</p>
+        <p class="eyebrow text-[11px] text-deep-100/60 mt-1">PUBLISHED ARTICLES</p>
+      </div>
+      <div class="bg-deep-900 p-6">
+        <p class="font-display text-3xl font-semibold text-teal-300">140+</p>
+        <p class="eyebrow text-[11px] text-deep-100/60 mt-1">STUDENTS MENTORED</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-sand-50">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-600 text-xs mb-3">ABOUT</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-8">Reading the coastline, one survey at a time.</h2>
+    <p class="text-lg text-deep-700 leading-relaxed">
+      Marine Science graduate from <span class="font-semibold text-deep-900">Universitas Padjadjaran</span> with hands-on experience in hydrographic surveys, coastal fieldwork, oceanographic data collection, and GIS applications. Experienced operating marine survey instruments - CTD, current meters, GNSS RTK, automatic level - and supporting multidisciplinary research projects across Jakarta Bay, Pangandaran, and Indramayu. Passionate about hydro-oceanography, coastal processes, marine spatial analysis, and numerical modeling.
+    </p>
+  </div>
+</section>
+
+<!-- EXPERIENCE (timeline) -->
+<section id="experience" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-600 text-xs mb-3">FIELD RECORD</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-16">Experience &amp; Research</h2>
+
+    <div class="relative pl-10">
+      <div class="absolute left-[7px] top-2 bottom-2 w-px timeline-line"></div>
+
+      <!-- Item -->
+      <div class="relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">MAY 2026 - PRESENT</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Research Assistant - Marine Water Quality Monitoring</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">FPIK UNPAD · Jakarta Bay &amp; Thousand Islands</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Deployed CTD and current meter instruments to measure physical oceanographic parameters at multiple water depths.</li>
+          <li>Collected seawater samples at multiple depths using Nansen bottles, and seabed sediment via grab sampler.</li>
+          <li>Prepared samples in accordance with Indonesian National Standards (SNI).</li>
+        </ul>
+        <div class="rounded-lg h-65 overflow-hidden mt-4">
+  <img src="https://i.ibb.co.com/xSTFsQ4D/CM.jpg" alt="Survei GNSS RTK di lapangan" class="w-full h-full object-cover">
+</div>
+      </div>
+
+      <!-- Item -->
+      <div class="relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">JUN - JUL 2026</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Research Assistant - Coastal Morphology Assessment</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">Pangandaran Regency · Sea Turtle Conservation</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Measured coastal elevation and beach slope using an automatic level (waterpass) at designated stations.</li>
+          <li>Collected sediment samples at each beach slope observation station.</li>
+          <li>Assisted preparation and setup of CTD equipment prior to field deployment.</li>
+        </ul>
+      </div>
+
+      <!-- Item -->
+      <div class="relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">JAN - MAY 2026</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Research Assistant - Coastal Zoning Plan Review</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">Pantai Penyu Pangumbahan Conservation Area</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Established Ground Control Points (GCPs) using GNSS RTK and performed coastal elevation measurements.</li>
+          <li>Conducted coastal elevation and beach slope measurements using an automatic level.</li>
+          <li>Assisted in preparation of UAV (drone) equipment for aerial surveys.</li>
+        </ul>
+        <div class="rounded-lg h-65 overflow-hidden mt-4">
+  <img src="https://i.ibb.co.com/YBr4BDrq/GNSS.jpg" alt="Survei GNSS RTK di lapangan" class="w-full h-full object-cover">
+</div>
+      </div>
+
+      <!-- Item -->
+      <div class="relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">DEC 2025 - JAN 2026</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Research Assistant - Shoreline Evolution Assessment</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">Indramayu Regency</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Established GCPs and performed coastal elevation measurements using GNSS RTK.</li>
+          <li>Conducted GNSS RTK shoreline surveys to determine shoreline positions.</li>
+          <li>Assisted in preparation of UAV equipment prior to aerial surveys.</li>
+        </ul>
+      </div>
+
+      <!-- Item -->
+      <div class="relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">FEB - JUN 2025</p>
+        <h3 class="font-display text-xl font-semibold mb-1">MBKM Research Intern - Coastal Dynamics Mapping</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">Balai Besar Survey dan Pemetaan Geologi Kelautan · Bandung</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Supported coastal dynamics research for the Characteristics Map of the North Coast of Java (1:50,000).</li>
+          <li>Assisted preparing coastal datasets for the North Coast of Java (2019 and 2024).</li>
+          <li>Produced Total Suspended Solids (TSS) visualizations for Indramayu Regency.</li>
+        </ul>
+      </div>
+
+      <!-- Item -->
+      <div class="relative mb-14">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-deep-400 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">FEB - JUL 2025</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Laboratory Assistant - Physics &amp; Statistics</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">FPIK UNPAD</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Facilitated laboratory practical sessions across Physics and Statistics modules.</li>
+          <li>Guided and supervised approximately 140+ students in total (149 Physics, 147 Statistics).</li>
+        </ul>
+      </div>
+
+      <!-- Item -->
+      <div class="relative">
+        <div class="absolute -left-10 top-1.5 w-4 h-4 rounded-full bg-deep-400 border-4 border-white shadow"></div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">JAN - SEP 2024</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Staff of Management Intern</h3>
+        <p class="text-sm text-teal-600 font-medium mb-3">International Unit, FPIK UNPAD</p>
+        <ul class="text-deep-700 text-[15px] leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-500">
+          <li>Managed correspondence, drafted MoUs, and prepared invitation letters for inter-university collaboration.</li>
+          <li>Responsible for data management within the International Unit.</li>
+          <li>Assisted FPIK students in pursuing study abroad opportunities.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-24 bg-deep-900 text-sand-50 contour-bg">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-300 text-xs mb-3">EDUCATION</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-14">Academic Background</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border border-sand-50/15 rounded-xl p-7 bg-deep-800/50">
+        <p class="eyebrow text-xs text-teal-300 mb-2">AUG 2022 - JUN 2026</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Universitas Padjadjaran</h3>
+        <p class="text-sm text-deep-100/70 mb-4">Bachelor's Degree in Marine Science · GPA 3.84/4.00</p>
+        <ul class="text-deep-100/80 text-sm leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-400">
+          <li>Master of Ceremonies, International Unit, Faculty of Fisheries and Marine Sciences (2024).</li>
+          <li>Completed 152 SKS, focusing on oceanography, ocean morphology, and data modeling.</li>
+        </ul>
+      </div>
+      <div class="border border-sand-50/15 rounded-xl p-7 bg-deep-800/50">
+        <p class="eyebrow text-xs text-teal-300 mb-2">AUG - DEC 2024</p>
+        <h3 class="font-display text-xl font-semibold mb-1">Universitas Diponegoro</h3>
+        <p class="text-sm text-deep-100/70 mb-4">Student Exchange · Aquatic Resources Management</p>
+        <ul class="text-deep-100/80 text-sm leading-relaxed space-y-1.5 list-disc list-inside marker:text-teal-400">
+          <li>Completed 16+ SKS focusing on coastal ecosystems: mangroves and coral reefs.</li>
+          <li>Field research on mangrove and coral reef ecosystem data collection in Jepara.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-600 text-xs mb-3">PUBLISHED WORK</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-14">Journal Articles</h2>
+
+    <div class="space-y-5">
+      <a href="https://doi.org/10.21608/ejabf.2026.474243.7656" target="_blank" class="block border border-deep-900/10 rounded-xl p-6 hover:border-teal-500 hover:shadow-md transition-all group">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="eyebrow text-xs text-teal-600 mb-2">2026 · LEAD AUTHOR · EJABF</p>
+            <h3 class="font-display text-lg font-semibold mb-2 group-hover:text-teal-600 transition-colors">Frequency Domain-Based Beach Slope Estimation Using Coastsat</h3>
+            <p class="text-sm text-deep-600">Case study of the west and east coasts of Batu Hiu, Pangandaran. Egyptian Journal of Aquatic Biology and Fisheries.</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-deep-400 group-hover:text-teal-600 transition-colors mt-1"></i>
         </div>
-    </section>
+      </a>
 
-    <!-- Experience & Projects -->
-    <section id="experience" class="py-24 bg-navy-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-navy-900 mb-4 text-center">Experience & Projects</h2>
-            <div class="w-16 h-1 bg-navy-500 mx-auto mb-12 rounded"></div>
+      <div class="border border-deep-900/10 rounded-xl p-6">
+        <p class="eyebrow text-xs text-deep-500 mb-2">2025 · MULTIDISIPLIN PENGABDIAN KEPADA MASYARAKAT</p>
+        <h3 class="font-display text-lg font-semibold mb-1">Environment-Responsive Smart Materials</h3>
+        <p class="text-sm text-deep-600">Sustainable innovation based on West Java climate data for future energy transition.</p>
+      </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-gray-100 group">
-                    <div class="text-navy-500 mb-5 transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-flask text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-2">Marine Water Quality Monitoring</h3>
-                    <p class="text-sm font-semibold text-gray-500 mb-4">Research Assistant | FPIK UNPAD</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Conducted fieldwork in Jakarta Bay and Thousand Islands. Collected seawater and seabed sediment samples using Nansen bottles and grab samplers, following Indonesian National Standards (SNI).
-                    </p>
-                </div>
+      <div class="border border-deep-900/10 rounded-xl p-6">
+        <p class="eyebrow text-xs text-deep-500 mb-2">2025 · RIWAYAT: EDUCATION JOURNAL OF HISTORY AND HUMANITIES</p>
+        <h3 class="font-display text-lg font-semibold mb-1">Satellite-Based Atmospheric Monitoring</h3>
+        <p class="text-sm text-deep-600">For environmentally resilient smart cities in Indonesia.</p>
+      </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-gray-100 group">
-                    <div class="text-navy-500 mb-5 transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-map-location-dot text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-2">Coastal Dynamics Research</h3>
-                    <p class="text-sm font-semibold text-gray-500 mb-4">MBKM Research Intern | Geological Agency</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Supported coastal dynamics mapping for the North Coast of Java (1:50,000). Produced Total Suspended Solids (TSS) visualizations and prepared complex spatial datasets.
-                    </p>
-                </div>
+      <div class="border border-deep-900/10 rounded-xl p-6">
+        <p class="eyebrow text-xs text-deep-500 mb-2">2025 · JURNAL ILMIAH MULTIDISIPLINER (JIMU)</p>
+        <h3 class="font-display text-lg font-semibold mb-1">Community-Based Ecosystem Governance Model</h3>
+        <p class="text-sm text-deep-600">For Indonesia's marine food security.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Card 3 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-gray-100 group">
-                    <div class="text-navy-500 mb-5 transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-satellite text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-2">Shoreline Evolution Assessment</h3>
-                    <p class="text-sm font-semibold text-gray-500 mb-4">Field Researcher | Indramayu & Pangandaran</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Established GCPs via GNSS RTK and conducted precise coastal elevation measurements. Assisted in UAV aerial survey preparations and CTD equipment deployment.
-                    </p>
-                </div>
+<!-- ACHIEVEMENTS -->
+<section class="py-24 bg-sand-50">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-600 text-xs mb-3">RECOGNITION</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-14">Achievements</h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-7 border border-deep-900/10 text-center">
+        <i class="fa-solid fa-medal text-3xl text-teal-500 mb-4"></i>
+        <p class="font-display font-semibold mb-1">Silver Medal</p>
+        <p class="text-sm text-deep-600">International Students Championship (ISC) - Lombok, 2025</p>
+      </div>
+      <div class="bg-white rounded-xl p-7 border border-deep-900/10 text-center">
+        <i class="fa-solid fa-trophy text-3xl text-teal-500 mb-4"></i>
+        <p class="font-display font-semibold mb-1">3rd Place</p>
+        <p class="text-sm text-deep-600">Sampan Maritime Competition (SMC) - Surabaya, 2025</p>
+      </div>
+      <div class="bg-white rounded-xl p-7 border border-deep-900/10 text-center">
+        <i class="fa-solid fa-pen-nib text-3xl text-teal-500 mb-4"></i>
+        <p class="font-display font-semibold mb-1">1st Runner-up</p>
+        <p class="text-sm text-deep-600">Maritime Research Center Article Writing (Pusjianmar) - Jakarta, 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Card 4 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-gray-100 group">
-                    <div class="text-navy-500 mb-5 transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-book-journal-whills text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-2">Scientific Publication (EJABF)</h3>
-                    <p class="text-sm font-semibold text-gray-500 mb-4">Lead Author | 2026</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Published "Frequency Domain-Based Beach Slope Estimation Using Coastsat" focusing on the complex coastal morphology of Batu Hiu, Pangandaran.
-                    </p>
-                </div>
+<!-- ORGANIZATIONAL EXPERIENCE -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-600 text-xs mb-3">LEADERSHIP</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-14">Organizational Experience</h2>
 
-                <!-- Card 5 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-gray-100 group">
-                    <div class="text-navy-500 mb-5 transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-chart-line text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-2">Physics & Statistics Laboratory</h3>
-                    <p class="text-sm font-semibold text-gray-500 mb-4">Laboratory Assistant</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Guided over 150 students across Physics and Statistics modules, facilitating complex data modeling and experimental practical sessions.
-                    </p>
-                </div>
-
-                 <!-- Card 6 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-8 border border-gray-100 group">
-                    <div class="text-navy-500 mb-5 transform group-hover:scale-110 transition-transform"><i class="fa-solid fa-globe text-3xl"></i></div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-2">International Management</h3>
-                    <p class="text-sm font-semibold text-gray-500 mb-4">Staff of Management Intern | FPIK</p>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        Drafted MoUs and managed data for international collaborations, directly facilitating study abroad opportunities for marine science students.
-                    </p>
-                </div>
-            </div>
+    <div class="space-y-8">
+      <div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">JUL 2024 - AUG 2025</p>
+        <h3 class="font-display text-lg font-semibold mb-1">Deputy Research Direction</h3>
+        <p class="text-sm text-teal-600 font-medium mb-2">KOMITMEN UNPAD</p>
+        <p class="text-deep-700 text-sm leading-relaxed">Managed 7 bureaus, developed research programs, and oversaw 9 software trainings, 2 hardware trainings, 7 sharing classes, and 14 research direction staff.</p>
+      </div>
+      <div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">NOV 2023 - AUG 2025</p>
+        <h3 class="font-display text-lg font-semibold mb-1">Staff of Instrumentation &amp; Marine Technical Survey Bureau</h3>
+        <p class="text-sm text-teal-600 font-medium mb-2">KOMITMEN UNPAD</p>
+        <p class="text-deep-700 text-sm leading-relaxed">Studied marine survey instruments and techniques; visualized ocean depth using Surfer software.</p>
+      </div>
+      <div>
+        <p class="eyebrow text-xs text-deep-500 mb-1">OCT 2023 - NOV 2024</p>
+        <h3 class="font-display text-lg font-semibold mb-1">Staff of Human Resources Department, Region 3</h3>
+        <p class="text-sm text-teal-600 font-medium mb-2">Novo Club Batch 2</p>
+        <p class="text-deep-700 text-sm leading-relaxed">Oversaw performance evaluations via KPIs, maintained relationships with 45 staff members, and fostered a healthy environment across 4 departments.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6 pt-2">
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">FEB - DEC 2023</p>
+          <h3 class="font-semibold text-sm mb-1">Staff, Member Welfare Division</h3>
+          <p class="text-xs text-deep-500">Himpunan Mahasiswa Ilmu Kelautan UNPAD</p>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-navy-900 mb-4">Technical Skills & Expertise</h2>
-            <div class="w-16 h-1 bg-navy-500 mx-auto mb-16 rounded"></div>
-
-            <div class="mb-12">
-                <h3 class="text-xl font-semibold text-gray-700 mb-6"><i class="fa-solid fa-compass text-navy-500 mr-2"></i> Core Competencies</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="px-5 py-2.5 bg-navy-50 text-navy-800 rounded-lg text-sm font-semibold shadow-sm border border-navy-100">Hydrographic Survey</span>
-                    <span class="px-5 py-2.5 bg-navy-50 text-navy-800 rounded-lg text-sm font-semibold shadow-sm border border-navy-100">Oceanographic Data Collection</span>
-                    <span class="px-5 py-2.5 bg-navy-50 text-navy-800 rounded-lg text-sm font-semibold shadow-sm border border-navy-100">Coastal Morphology</span>
-                    <span class="px-5 py-2.5 bg-navy-50 text-navy-800 rounded-lg text-sm font-semibold shadow-sm border border-navy-100">GNSS Survey & RTK</span>
-                    <span class="px-5 py-2.5 bg-navy-50 text-navy-800 rounded-lg text-sm font-semibold shadow-sm border border-navy-100">Marine Water Quality Sampling</span>
-                    <span class="px-5 py-2.5 bg-navy-50 text-navy-800 rounded-lg text-sm font-semibold shadow-sm border border-navy-100">Numerical Modeling</span>
-                </div>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold text-gray-700 mb-6"><i class="fa-solid fa-laptop-code text-navy-500 mr-2"></i> Software & Tools</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="px-5 py-2.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm font-semibold">Python</span>
-                    <span class="px-5 py-2.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm font-semibold">ArcGIS Pro & QGIS</span>
-                    <span class="px-5 py-2.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm font-semibold">CoastSat</span>
-                    <span class="px-5 py-2.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm font-semibold">Delft 3D & Mike DHI</span>
-                    <span class="px-5 py-2.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm font-semibold">Surfer & Global Mapper</span>
-                    <span class="px-5 py-2.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-sm font-semibold">SNAP 11 & GRASS GIS</span>
-                </div>
-            </div>
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">JAN - DEC 2023</p>
+          <h3 class="font-semibold text-sm mb-1">Deputy Head of Inventory Division</h3>
+          <p class="text-xs text-deep-500">Unit Renang UNPAD</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-<!-- Contact Section -->
-    <section id="contact" class="py-24 bg-navy-900 text-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                
-                <!-- Kolom Kiri: Gambar Lapangan -->
-                <div class="order-2 md:order-1 relative group mx-auto w-full max-w-md md:max-w-full">
-                    <div class="aspect-square md:aspect-[4/3] rounded-2xl border-4 border-navy-700 shadow-2xl overflow-hidden">
-                        <!-- Ganti src dengan nama file fotomu -->
-                        <img src="https://i.ibb.co.com/FbHwGhL9/Lapang.jpg" alt="Hilmi Fawwaz Putra saat Fieldwork" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <!-- Aksen dekoratif kecil -->
-                    <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-navy-500 rounded-lg -z-10 opacity-50"></div>
-                </div>
-
-                <!-- Kolom Kanan: Teks & Info Kontak -->
-                <div class="order-1 md:order-2 text-center md:text-left">
-                    <h2 class="text-3xl font-bold mb-4">Let's Connect</h2>
-                    <div class="w-16 h-1 bg-navy-500 mx-auto md:mx-0 mb-8 rounded"></div>
-                    <p class="text-navy-100 mb-10 text-lg leading-relaxed">
-                        Whether you are looking to collaborate on marine research, require geospatial analysis, or want to discuss coastal dynamics, feel free to reach out.
-                    </p>
-
-                    <!-- List Kontak (Vertikal) -->
-                    <div class="flex flex-col space-y-6">
-                        <div class="flex items-center justify-center md:justify-start">
-                            <div class="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center border border-navy-700 mr-5 shadow-lg shrink-0">
-                                <i class="fa-solid fa-envelope text-xl text-navy-100"></i>
-                            </div>
-                            <a href="mailto:hilmifp1234@gmail.com" class="text-base font-medium hover:text-navy-300 transition-colors">hilmifp1234@gmail.com</a>
-                        </div>
-
-                        <div class="flex items-center justify-center md:justify-start">
-                            <div class="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center border border-navy-700 mr-5 shadow-lg shrink-0">
-                                <i class="fa-brands fa-linkedin-in text-xl text-navy-100"></i>
-                            </div>
-                            <a href="https://www.linkedin.com/in/hilmifwz" target="_blank" class="text-base font-medium hover:text-navy-300 transition-colors">linkedin.com/in/hilmifwz</a>
-                        </div>
-
-                        <div class="flex items-center justify-center md:justify-start">
-                            <div class="w-12 h-12 bg-navy-800 rounded-full flex items-center justify-center border border-navy-700 mr-5 shadow-lg shrink-0">
-                                <i class="fa-solid fa-phone text-xl text-navy-100"></i>
-                            </div>
-                            <a href="tel:+6281221879606" class="text-base font-medium hover:text-navy-300 transition-colors">+62 812-2187-9606</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <details class="mt-10 group">
+      <summary class="cursor-pointer eyebrow text-xs text-teal-600 flex items-center gap-2 select-none">
+        <i class="fa-solid fa-chevron-right text-[10px] group-open:rotate-90 transition-transform"></i>
+        COMMITTEE &amp; VOLUNTEERING EXPERIENCE
+      </summary>
+      <div class="mt-6 grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">MAR - MAY 2024</p>
+          <h3 class="font-semibold text-sm mb-1">Head of Group Assistance Division</h3>
+          <p class="text-xs text-deep-500">Scholar FPIK 2024 - accompanied and assessed 30 participants.</p>
         </div>
-    </section>
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">APR - NOV 2023</p>
+          <h3 class="font-semibold text-sm mb-1">Head of Fundraising Division</h3>
+          <p class="text-xs text-deep-500">FPIK Awards 2023 - funding strategy, sponsorships, 4 merchandise lines, managed 8 staff.</p>
+        </div>
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">JUN - NOV 2023</p>
+          <h3 class="font-semibold text-sm mb-1">Staff of Field Division</h3>
+          <p class="text-xs text-deep-500">Think Green 8.0 - coordinated field logistics for 170 committees/participants.</p>
+        </div>
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">MAY - OCT 2023</p>
+          <h3 class="font-semibold text-sm mb-1">Staff of Events Division</h3>
+          <p class="text-xs text-deep-500">Maritime Festival 2023 (MARFEST) - organized 16 event series for 102 participants.</p>
+        </div>
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">SEP - OCT 2022</p>
+          <h3 class="font-semibold text-sm mb-1">Staff of Fundraising Division</h3>
+          <p class="text-xs text-deep-500">Adikarsa 2022 - sponsorship outreach and tenant liaison.</p>
+        </div>
+        <div>
+          <p class="eyebrow text-xs text-deep-500 mb-1">OCT - NOV 2022</p>
+          <h3 class="font-semibold text-sm mb-1">Staff of Public Relations</h3>
+          <p class="text-xs text-deep-500">Amerta 2022 - invitations and event licensing.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-navy-900 text-center py-6 border-t border-navy-800">
-        <p class="text-sm text-navy-300 font-light">&copy; 2026 Hilmi Fawwaz Putra. All rights reserved.</p>
-    </footer>
+<!-- SKILLS -->
+<section id="skills" class="py-24 bg-deep-900 text-sand-50 contour-bg">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <p class="eyebrow text-teal-300 text-xs mb-3">CAPABILITIES</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold mb-14">Skills &amp; Technical Tools</h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="eyebrow text-xs text-teal-300 mb-5">HARD SKILLS</h3>
+        <div class="flex flex-wrap gap-2.5">
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Hydrographic Survey</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Coastal Survey</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">GNSS Survey</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Oceanographic Survey</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Coastal Morphology</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Marine Water Quality Sampling</span>
+        </div>
+
+        <h3 class="eyebrow text-xs text-teal-300 mb-5 mt-10">SOFT SKILLS</h3>
+        <div class="flex flex-wrap gap-2.5">
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Analytical Skills</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Critical Thinking</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Team Management</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Problem Solving</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Time Management</span>
+          <span class="px-4 py-2 border border-sand-50/20 rounded-full text-sm">Teamwork</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="eyebrow text-xs text-teal-300 mb-5">TECHNICAL TOOLS</h3>
+        <div class="space-y-3">
+          <!-- proficiency bars -->
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>ArcGIS Pro / QGIS</span><span class="text-teal-300 font-mono text-xs">ADVANCED</span></div>
+            <div class="h-1.5 bg-sand-50/10 rounded-full"><div class="h-1.5 bg-teal-400 rounded-full" style="width:82%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>Python</span><span class="text-teal-300 font-mono text-xs">ADVANCED</span></div>
+            <div class="h-1.5 bg-sand-50/10 rounded-full"><div class="h-1.5 bg-teal-400 rounded-full" style="width:75%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>Global Mapper / Surfer</span><span class="text-teal-300 font-mono text-xs">INTERMEDIATE</span></div>
+            <div class="h-1.5 bg-sand-50/10 rounded-full"><div class="h-1.5 bg-teal-400 rounded-full" style="width:65%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>Delft 3D / Mike DHI</span><span class="text-teal-300 font-mono text-xs">INTERMEDIATE</span></div>
+            <div class="h-1.5 bg-sand-50/10 rounded-full"><div class="h-1.5 bg-teal-400 rounded-full" style="width:50%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>DSAS / Grass GIS</span><span class="text-teal-300 font-mono text-xs">INTERMEDIATE</span></div>
+            <div class="h-1.5 bg-sand-50/10 rounded-full"><div class="h-1.5 bg-teal-400 rounded-full" style="width:50%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1"><span>SNAP 11 / Canva / CapCut</span><span class="text-teal-300 font-mono text-xs">INTERMEDIATE</span></div>
+            <div class="h-1.5 bg-sand-50/10 rounded-full"><div class="h-1.5 bg-teal-400 rounded-full" style="width:50%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-sand-50">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+     <div class="rounded-2xl aspect-[4/3] overflow-hidden order-2 md:order-1">
+  <img src="https://i.ibb.co.com/FbHwGhL9/Lapang.jpg" alt="Hilmi Fawwaz Putra saat fieldwork" class="w-full h-full object-cover">
+</div>
+
+      <div class="order-1 md:order-2">
+        <p class="eyebrow text-teal-600 text-xs mb-3">GET IN TOUCH</p>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold mb-6">Let's talk about the coast.</h2>
+        <p class="text-deep-600 leading-relaxed mb-10">
+          Open to collaborate on marine research, coastal geospatial analysis, or discuss opportunities in hydro-oceanography, coastal surveys and remote sensing & GIS.
+        </p>
+        <div class="space-y-5">
+          <a href="mailto:hilmifp1234@gmail.com" class="flex items-center gap-4 group">
+            <span class="w-11 h-11 rounded-full border border-deep-900/15 flex items-center justify-center group-hover:border-teal-500 group-hover:text-teal-600 transition-colors"><i class="fa-solid fa-envelope"></i></span>
+            <span class="font-medium">hilmifp1234@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/hilmifwz" target="_blank" class="flex items-center gap-4 group">
+            <span class="w-11 h-11 rounded-full border border-deep-900/15 flex items-center justify-center group-hover:border-teal-500 group-hover:text-teal-600 transition-colors"><i class="fa-brands fa-linkedin-in"></i></span>
+            <span class="font-medium">linkedin.com/in/hilmifwz</span>
+          </a>
+          <a href="tel:+6281221879606" class="flex items-center gap-4 group">
+            <span class="w-11 h-11 rounded-full border border-deep-900/15 flex items-center justify-center group-hover:border-teal-500 group-hover:text-teal-600 transition-colors"><i class="fa-solid fa-phone"></i></span>
+            <span class="font-medium">+62 812-2187-9606</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-deep-900 text-center py-8 border-t border-sand-50/10">
+  <p class="text-xs text-deep-100/50 font-mono">&copy; 2026 HILMI FAWWAZ PUTRA - BANDUNG, WEST JAVA</p>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('section, .reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('#experience .relative.mb-14, #experience .relative:last-child').forEach(el=>{
+    el.classList.add('reveal'); io.observe(el);
+  });
+</script>
 
 </body>
 </html>
